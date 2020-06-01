@@ -72,15 +72,15 @@ ctaImg.setAttribute('src', ctaSection[2]);
 
 
 /* main-content section Items*/
-
+const mainArray = siteContent["main-content"];
 //top-content items 
 //features 
 const featuresDiv = document.querySelector('.top-content .text-content');
 const featuresHeader = document.querySelector('.text-content h4:nth-of-type(1)');
-featuresHeader.textContent = siteContent["main-content"]["features-h4"];
+featuresHeader.textContent = mainArray["features-h4"];
 
 const featuresContent = document.querySelector('.text-content p:nth-of-type(1)');
-featuresContent.textContent = siteContent["main-content"]["features-content"];
+featuresContent.textContent = mainArray["features-content"];
 
 //create about section in top-content 
 const topTextContent = document.querySelector('.top-content .text-content');
@@ -89,11 +89,11 @@ const aboutDiv = document.createElement('div');
 
 //header
 const aboutHeader = document.createElement('h4');
-aboutHeader.textContent = siteContent["main-content"]["about-h4"];
+aboutHeader.textContent = mainArray["about-h4"];
 aboutDiv.appendChild(aboutHeader);
 //paragraph
 const aboutContent = document.createElement('p');
-aboutContent.textContent = siteContent["main-content"]["about-content"];
+aboutContent.textContent = mainArray["about-content"];
 aboutDiv.appendChild(aboutContent);
 
 //change top text content to flex-direction column
@@ -102,23 +102,41 @@ topContentDiv.appendChild(aboutDiv);
 
 //get img in the top-content 
 const topImg = document.querySelector('#middle-img');
-topImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+topImg.setAttribute('src', mainArray["middle-img-src"]);
 
 //bottom-content 
 //services
 const servicesHeader = document.querySelector('.bottom-content .text-content:nth-of-type(1) h4');
-servicesHeader.textContent = siteContent["main-content"]["services-h4"];
+servicesHeader.textContent = mainArray["services-h4"];
 const servicesContent = document.querySelector('.bottom-content .text-content p');
-servicesContent.textContent = siteContent["main-content"]["services-content"];
+servicesContent.textContent = mainArray["services-content"];
 
 //product 
 const productHeader = document.querySelector('.bottom-content .text-content:nth-of-type(2) h4');
-productHeader.textContent = siteContent["main-content"]["product-h4"];
+productHeader.textContent = mainArray["product-h4"];
 const productContent = document.querySelector('.bottom-content .text-content:nth-of-type(2) p');
-productContent.textContent = siteContent["main-content"]["product-content"];
+productContent.textContent = mainArray["product-content"];
 
 //vision
 const visionHeader = document.querySelector('.bottom-content .text-content:nth-of-type(3) h4');
-visionHeader.textContent = siteContent["main-content"]["vision-h4"];
+visionHeader.textContent = mainArray["vision-h4"];
 const visionContent = document.querySelector('.bottom-content .text-content:nth-of-type(3) p');
-visionContent.textContent = siteContent["main-content"]["vision-content"];
+visionContent.textContent = mainArray["vision-content"];
+
+
+/*Contact Section */
+const contactArray = siteContent.contact;
+
+const contactKeys = Object.keys(contactArray);
+
+const contactHeader = document.querySelector('.contact h4');
+contactHeader.textContent = contactArray["contact-h4"];
+const contactP =document.querySelectorAll('.contact p');
+
+contactP.forEach(function(element, index){
+  element.textContent = contactArray[contactKeys[index+1]];
+}); 
+
+/*Footer Section */
+const footerP = document.querySelector('footer p');
+footerP.textContent = siteContent["footer"]["copyright"];
