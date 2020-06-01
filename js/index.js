@@ -140,3 +140,24 @@ contactP.forEach(function(element, index){
 /*Footer Section */
 const footerP = document.querySelector('footer p');
 footerP.textContent = siteContent["footer"]["copyright"];
+
+/*Task 3 - Change the color of the navigation text to be green. */
+navLinks.forEach(function(element){
+  element.style.color = "green";
+})
+
+/* Utilize .appendChild() and .prepend() to add two new items to the navigation system. You can call them whatever you want. */
+const beforeNav = document.createElement('a');
+beforeNav.textContent = "Whatever";
+beforeNav.style.color = "green";
+beforeNav.href = '#';
+
+const afterNav = document.createElement('a');
+afterNav.textContent = "You Want";
+afterNav.style.color = "green";
+afterNav.href = "#";
+
+
+const nav = document.querySelector('nav');
+nav.prepend(beforeNav);
+nav.append(afterNav);
