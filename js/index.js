@@ -44,6 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 //## Task 1: Create selectors to point your data into elements
 //## Task 2: Update the HTML with the JSON data
 
+/* Nav Items */
 //getting nav links
 const navLinks = document.querySelectorAll('a');
 //adding the data from the JSON to the site
@@ -52,4 +53,20 @@ navLinks.forEach(function(element, index){
   element.textContent = aLinkArray[index];
 })
 
+/*cta section Items */
+
+//creating array of json data for cta section
+const ctaSection = Object.values(siteContent.cta);
+//getting h1 header in section cta and adding title from json data
+// const ctah1 = document.querySelectorAll('.cta-text h1')[0];
+const ctah1 = document.querySelector('.cta-text h1:nth-of-type(1)');
+ctah1.textContent = ctaSection[0];
+
+//get button in cta header 
+const ctaBtn = document.querySelector('.cta-text button:nth-of-type(1)');
+ctaBtn.textContent = ctaSection[1];
+
+//add img src to img 
+const ctaImg = document.querySelector('.cta img');
+ctaImg.setAttribute('src', ctaSection[2]);
 
