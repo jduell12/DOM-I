@@ -100,3 +100,25 @@ aboutDiv.appendChild(aboutContent);
 const topContentDiv = document.querySelector('.top-content');
 topContentDiv.appendChild(aboutDiv);
 
+//get img in the top-content 
+const topImg = document.querySelector('#middle-img');
+topImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+//bottom-content 
+//services
+const servicesHeader = document.querySelector('.bottom-content .text-content:nth-of-type(1) h4');
+servicesHeader.textContent = siteContent["main-content"]["services-h4"];
+const servicesContent = document.querySelector('.bottom-content .text-content p');
+servicesContent.textContent = siteContent["main-content"]["services-content"];
+
+//product 
+const productHeader = document.querySelector('.bottom-content .text-content:nth-of-type(2) h4');
+productHeader.textContent = siteContent["main-content"]["product-h4"];
+const productContent = document.querySelector('.bottom-content .text-content:nth-of-type(2) p');
+productContent.textContent = siteContent["main-content"]["product-content"];
+
+//vision
+const visionHeader = document.querySelector('.bottom-content .text-content:nth-of-type(3) h4');
+visionHeader.textContent = siteContent["main-content"]["vision-h4"];
+const visionContent = document.querySelector('.bottom-content .text-content:nth-of-type(3) p');
+visionContent.textContent = siteContent["main-content"]["vision-content"];
