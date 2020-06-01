@@ -39,4 +39,17 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+//## Task 1: Create selectors to point your data into elements
+//## Task 2: Update the HTML with the JSON data
+
+//getting nav links
+const navLinks = document.querySelectorAll('a');
+//adding the data from the JSON to the site
+const aLinkArray = Object.values(siteContent.nav);
+navLinks.forEach(function(element, index){
+  element.textContent = aLinkArray[index];
+})
+
+
