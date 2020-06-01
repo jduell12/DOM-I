@@ -70,3 +70,33 @@ ctaBtn.textContent = ctaSection[1];
 const ctaImg = document.querySelector('.cta img');
 ctaImg.setAttribute('src', ctaSection[2]);
 
+
+/* main-content section Items*/
+
+//top-content items 
+//features 
+const featuresDiv = document.querySelector('.top-content .text-content');
+const featuresHeader = document.querySelector('.text-content h4:nth-of-type(1)');
+featuresHeader.textContent = siteContent["main-content"]["features-h4"];
+
+const featuresContent = document.querySelector('.text-content p:nth-of-type(1)');
+featuresContent.textContent = siteContent["main-content"]["features-content"];
+
+//create about section in top-content 
+const topTextContent = document.querySelector('.top-content .text-content');
+//create text-content for about section
+const aboutDiv = document.createElement('div');
+
+//header
+const aboutHeader = document.createElement('h4');
+aboutHeader.textContent = siteContent["main-content"]["about-h4"];
+aboutDiv.appendChild(aboutHeader);
+//paragraph
+const aboutContent = document.createElement('p');
+aboutContent.textContent = siteContent["main-content"]["about-content"];
+aboutDiv.appendChild(aboutContent);
+
+//change top text content to flex-direction column
+const topContentDiv = document.querySelector('.top-content');
+topContentDiv.appendChild(aboutDiv);
+
